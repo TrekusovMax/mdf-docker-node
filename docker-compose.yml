@@ -1,0 +1,11 @@
+services:
+  date:
+    image: trekusovmax/node_date    
+  result:
+    image: trekusovmax/node_index
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    depends_on:
+      - date
